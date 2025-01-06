@@ -1,95 +1,244 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+"use client"; // Ensure compatibility for client-side scripts
 
-export default function Home() {
+import { useTranslation } from "react-i18next"; // Import useTranslation from react-i18next
+import Layout from '../components/Layout';
+
+const Home = () => {
+  const { t } = useTranslation(); // Get translation function from i18n
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+    <Layout>
+      <div className="fashion_section">
+         <div id="main_slider" className="carousel slide" data-ride="carousel">
+            <div className="carousel-inner">
+               <div className="carousel-item active">
+                  <div className="container">
+                     <h1 className="fashion_taital">{t("manAndWomanFashion")}</h1>
+                     <div className="fashion_section_2">
+                        <div className="row">
+                           {/* Man T-Shirt */}
+                           <div className="col-lg-4 col-sm-4">
+                              <div className="box_main">
+                                 <h4 className="shirt_text">{t("manTshirt")}</h4>
+                                 <p className="price_text">
+                                    {t("price")}  <span style={{ color: "#262626" }}>$30</span>
+                                 </p>
+                                 <div className="tshirt_img"><img src="/images/tshirt-img.png" alt="Man T-shirt" /></div>
+                                 <div className="btn_main">
+                                    <div className="buy_bt"><a href="#">{t("buyNow")}</a></div>
+                                    <div className="seemore_bt"><a href="#">{t("seeMore")}</a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           {/* Man Shirt */}
+                           <div className="col-lg-4 col-sm-4">
+                              <div className="box_main">
+                                 <h4 className="shirt_text">{t("manShirt")}</h4>
+                                 <p className="price_text">
+                                    {t("price")}  <span style={{ color: "#262626" }}>$30</span>
+                                 </p>
+                                 <div className="tshirt_img"><img src="/images/dress-shirt-img.png" alt="Man Shirt" /></div>
+                                 <div className="btn_main">
+                                    <div className="buy_bt"><a href="#">{t("buyNow")}</a></div>
+                                    <div className="seemore_bt"><a href="#">{t("seeMore")}</a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           {/* Woman Skirt */}
+                           <div className="col-lg-4 col-sm-4">
+                              <div className="box_main">
+                                 <h4 className="shirt_text">{t("womanSkirt")}</h4>
+                                 <p className="price_text">
+                                    {t("price")}  <span style={{ color: "#262626" }}>$30</span>
+                                 </p>
+                                 <div className="tshirt_img"><img src="/images/women-clothes-img.png" alt="Woman Skirt" /></div>
+                                 <div className="btn_main">
+                                    <div className="buy_bt"><a href="#">{t("buyNow")}</a></div>
+                                    <div className="seemore_bt"><a href="#">{t("seeMore")}</a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               {/* Additional carousel items can follow the same structure */}
+               <div className="carousel-item">
+                  <div className="container">
+                     <h1 className="fashion_taital">{t("manAndWomanFashion")}</h1>
+                     <div className="fashion_section_2">
+                        <div className="row">
+                           <div className="col-lg-4 col-sm-4">
+                              <div className="box_main">
+                                 <h4 className="shirt_text">{t("manTshirt")}</h4>
+                                 <p className="price_text">
+                                    {t("price")}  <span style={{ color: "#262626" }}>$30</span>
+                                 </p>
+                                 <div className="tshirt_img"><img src="/images/tshirt-img.png" alt="Man T-shirt" /></div>
+                                 <div className="btn_main">
+                                    <div className="buy_bt"><a href="#">{t("buyNow")}</a></div>
+                                    <div className="seemore_bt"><a href="#">{t("seeMore")}</a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           {/* Repeat for other products */}
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               {/* Add more carousel items here */}
+            </div>
+
+            <a className="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
+               <i className="fa fa-angle-left"></i>
+            </a>
+            <a className="carousel-control-next" href="#main_slider" role="button" data-slide="next">
+               <i className="fa fa-angle-right"></i>
+            </a>
+         </div>
       </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className="fashion_section">
+   <div id="electronic_main_slider" className="carousel slide" data-ride="carousel">
+      <div className="carousel-inner">
+         <div className="carousel-item active">
+            <div className="container">
+               <h1 className="fashion_taital">{t("Electronic")}</h1>
+               <div className="fashion_section_2">
+                  <div className="row">
+                     <div className="col-lg-4 col-sm-4">
+                        <div className="box_main">
+                           <h4 className="shirt_text">{t("Laptop")}</h4>
+                           <p className="price_text">
+                              {t("Start Price")} <span style={{ color: "#262626" }}>$ 100</span>
+                           </p>
+                           <div className="electronic_img">
+                              <img src="/images/laptop-img.png" alt={t("Laptop")} />
+                           </div>
+                           <div className="btn_main">
+                              <div className="buy_bt"><a href="#">{t("Buy Now")}</a></div>
+                              <div className="seemore_bt"><a href="#">{t("See More")}</a></div>
+                           </div>
+                        </div>
+                     </div>
+                     <div className="col-lg-4 col-sm-4">
+                        <div className="box_main">
+                           <h4 className="shirt_text">{t("Mobile")}</h4>
+                           <p className="price_text">
+                              {t("Start Price")} <span style={{ color: "#262626" }}>$ 100</span>
+                           </p>
+                           <div className="electronic_img">
+                              <img src="/images/mobile-img.png" alt={t("Mobile")} />
+                           </div>
+                           <div className="btn_main">
+                              <div className="buy_bt"><a href="#">{t("Buy Now")}</a></div>
+                              <div className="seemore_bt"><a href="#">{t("See More")}</a></div>
+                           </div>
+                        </div>
+                     </div>
+                     <div className="col-lg-4 col-sm-4">
+                        <div className="box_main">
+                           <h4 className="shirt_text">{t("Computers")}</h4>
+                           <p className="price_text">
+                              {t("Start Price")} <span style={{ color: "#262626" }}>$ 100</span>
+                           </p>
+                           <div className="electronic_img">
+                              <img src="/images/computer-img.png" alt={t("Computers")} />
+                           </div>
+                           <div className="btn_main">
+                              <div className="buy_bt"><a href="#">{t("Buy Now")}</a></div>
+                              <div className="seemore_bt"><a href="#">{t("See More")}</a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         {/* <!-- Repeat for each carousel-item --> */}
       </div>
+      <a className="carousel-control-prev" href="#electronic_main_slider" role="button" data-slide="prev">
+         <i className="fa fa-angle-left"></i>
+      </a>
+      <a className="carousel-control-next" href="#electronic_main_slider" role="button" data-slide="next">
+         <i className="fa fa-angle-right"></i>
+      </a>
+   </div>
+</div>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+{/* <!-- Jewellery Section --> */}
+<div className="jewellery_section">
+   <div id="jewellery_main_slider" className="carousel slide" data-ride="carousel">
+      <div className="carousel-inner">
+         <div className="carousel-item active">
+            <div className="container">
+               <h1 className="fashion_taital">{t("Jewellery Accessories")}</h1>
+               <div className="fashion_section_2">
+                  <div className="row">
+                     <div className="col-lg-4 col-sm-4">
+                        <div className="box_main">
+                           <h4 className="shirt_text">{t("Jumkas")}</h4>
+                           <p className="price_text">
+                              {t("Start Price")} <span style={{ color: "#262626" }}>$ 100</span>
+                           </p>
+                           <div className="jewellery_img">
+                              <img src="images/jhumka-img.png" alt={t("Jumkas")} />
+                           </div>
+                           <div className="btn_main">
+                              <div className="buy_bt"><a href="#">{t("Buy Now")}</a></div>
+                              <div className="seemore_bt"><a href="#">{t("See More")}</a></div>
+                           </div>
+                        </div>
+                     </div>
+                     <div className="col-lg-4 col-sm-4">
+                        <div className="box_main">
+                           <h4 className="shirt_text">{t("Necklaces")}</h4>
+                           <p className="price_text">
+                              {t("Start Price")} <span style={{ color: "#262626" }}>$ 100</span>
+                           </p>
+                           <div className="jewellery_img">
+                              <img src="images/neklesh-img.png" alt={t("Necklaces")} />
+                           </div>
+                           <div className="btn_main">
+                              <div className="buy_bt"><a href="#">{t("Buy Now")}</a></div>
+                              <div className="seemore_bt"><a href="#">{t("See More")}</a></div>
+                           </div>
+                        </div>
+                     </div>
+                     <div className="col-lg-4 col-sm-4">
+                        <div className="box_main">
+                           <h4 className="shirt_text">{t("Kangans")}</h4>
+                           <p className="price_text">
+                              {t("Start Price")} <span style={{ color: "#262626" }}>$ 100</span>
+                           </p>
+                           <div className="jewellery_img">
+                              <img src="images/kangan-img.png" alt={t("Kangans")} />
+                           </div>
+                           <div className="btn_main">
+                              <div className="buy_bt"><a href="#">{t("Buy Now")}</a></div>
+                              <div className="seemore_bt"><a href="#">{t("See More")}</a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         {/* <!-- Repeat for each carousel-item --> */}
       </div>
-    </main>
-  )
-}
+      <a className="carousel-control-prev" href="#jewellery_main_slider" role="button" data-slide="prev">
+         <i className="fa fa-angle-left"></i>
+      </a>
+      <a className="carousel-control-next" href="#jewellery_main_slider" role="button" data-slide="next">
+         <i className="fa fa-angle-right"></i>
+      </a>
+ 
+   </div>
+</div>
+
+
+    </Layout>
+  );
+};
+
+export default Home;
